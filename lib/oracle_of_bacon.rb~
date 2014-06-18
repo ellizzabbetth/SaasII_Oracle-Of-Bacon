@@ -81,8 +81,8 @@ class OracleOfBacon
     end
     def parse_graph_response
        @type = :graph
-       actors = @doc.xpath('//actor').map(&:text)
-       movies = @doc.xpath('//movie').map(&:text)
+       actor_arr = @doc.xpath('//actor').map(&:text)
+       movie_arr = @doc.xpath('//movie').map(&:text)
        @data = actors.zip(movies).flatten.compact
     end
     def parse_spellcheck_response
